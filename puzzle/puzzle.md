@@ -2,7 +2,7 @@
 
 ## Challenge
 The challenge consisted of a `zip` archive that could be downloaded.
-In the Archive were 4 PNG imgaes.
+In the Archive were 4 PNG images.
 
 ## Solution
 
@@ -59,6 +59,6 @@ b'y}\nMRMe4sCD{'
 b'y}\nCD{e4sMRM'
 b'y}\nCD{MRMe4s'
 ```
-There we see the sting
+There we see the string
 `b'MRMCD{e4sy}\n'`
 which looks quite flaggy and surprise **IS THE FLAG**
