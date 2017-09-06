@@ -62,3 +62,26 @@ b'y}\nCD{MRMe4s'
 There we see the string
 `b'MRMCD{e4sy}\n'`
 which looks quite flaggy and surprise **IS THE FLAG**
+
+#### Variation
+
+The filenames individually decoded with base64 give enough information to
+figure out the correct order and don't need brute force
+```
+>> import base64
+>>> base64.standard_b64decode("ZTRz")
+'e4s'
+>>> base64.standard_b64decode("TVJN")
+'MRM'
+>>> base64.standard_b64decode("Q0R7")
+'CD{'
+>>> base64.standard_b64decode("eX0K")
+'y}\n'
+```
+The closing brace needs to be in the end, the `CD` of the opening brace should
+be preceded by some spelling of `mrm` to fulfil the flag syntax, which leaves
+`e4s` to go into exactly one position inside the flag:
+```
+'MRM' + 'CD{' + 'e4s' + 'y}\n'
+= `MRMCD{e4sy}\n`
+```
